@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+<h1><strong>{{app.user.firstname}} {{app.user.lastname}}</strong></h1>
+<a href="{{ path('app_logout') }}">Déconnexion</a>
+<h2>Changement de mot de passe</h2>
+<hr/>
+{% if error == true %} <p style="color:red;">{{ notif }}</p> {% endif %}
+{% if error == false %} <p style="color:green;">{{ notif }}</p> {% endif %}
+{{ form(form_mdp) }}
+
+
+<a href="{{ path('account')}}">Retour sur mon compte</a>
+{% endblock %}
