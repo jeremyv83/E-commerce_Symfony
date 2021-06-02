@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - {{product.name}}{% endblock %}
+
+{% block body %}
+<h1>Produit</h1>
+<hr/>
+<h2>{{product.name}}</h2>
+<img class="card-img-top" style="max-width:400px;" src="/assets/images/{{product.illustration}}" alt="{{product.name}}">
+<h3>{{product.subtitle}}</h3>
+<p>{{product.description}}</p>
+<h4><strong>{{(product.price / 100)|number_format(2, ',', '.')}} €</strong></h4>
+
+{% endblock %}
